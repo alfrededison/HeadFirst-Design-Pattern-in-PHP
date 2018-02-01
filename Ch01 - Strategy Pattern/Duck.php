@@ -24,6 +24,22 @@ abstract class Duck
         $this->flyBehavior->fly();
     }
 
+    /**
+     * @param \FlyBehavior $flyBehavior
+     */
+    public function setFlyBehavior(FlyBehavior $flyBehavior)
+    {
+        $this->flyBehavior = $flyBehavior;
+    }
+
+    /**
+     * @param \QuackBehavior $quackBehavior
+     */
+    public function setQuackBehavior(QuackBehavior $quackBehavior)
+    {
+        $this->quackBehavior = $quackBehavior;
+    }
+
     public function performQuack()
     {
         $this->quackBehavior->quack();
