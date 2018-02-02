@@ -12,13 +12,13 @@ require_once 'Subject.php';
 class CurrentConditionDisplay implements Observer, DisplayElement
 {
     /** @var \Subject */
-    protected $weatherData;
+    private $weatherData;
 
     /** @var float $temperature */
-    protected $temperature;
+    private $temperature;
 
     /** @var float $humidity */
-    protected $humidity;
+    private $humidity;
 
     /**
      * CurrentConditionDisplay constructor.

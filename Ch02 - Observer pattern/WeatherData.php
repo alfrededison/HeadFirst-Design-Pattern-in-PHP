@@ -9,11 +9,11 @@ require_once 'Subject.php';
 
 class WeatherData implements Subject
 {
-    protected $observers = [];
+    private $observers = [];
 
-    protected $temperature;
-    protected $humidity;
-    protected $pressure;
+    private $temperature;
+    private $humidity;
+    private $pressure;
 
     public function registerObserver(Observer $observer)
     {
