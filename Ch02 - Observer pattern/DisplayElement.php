@@ -5,6 +5,8 @@
  * Time: 10:37 AM
  */
 
+namespace Headfirst;
+
 interface DisplayElement
 {
     public function display();

@@ -5,6 +5,8 @@
  * Time: 10:31 AM
  */
 
+namespace Headfirst;
+
 interface Observer
 {
     /**

@@ -5,12 +5,15 @@
  * Time: 3:35 PM
  */
 
-require_once 'Beverages/Espresso.php';
-require_once 'Beverages/DarkRoast.php';
-require_once 'Beverages/HouseBlend.php';
-require_once 'CondimentDecorators/Mocha.php';
-require_once 'CondimentDecorators/Whip.php';
-require_once 'CondimentDecorators/Soy.php';
+define('HEADFIRST', __DIR__);
+require_once __DIR__ . '/../main.php';
+
+use Headfirst\Beverages\DarkRoast;
+use Headfirst\Beverages\Espresso;
+use Headfirst\Beverages\HouseBlend;
+use Headfirst\CondimentDecorators\Mocha;
+use Headfirst\CondimentDecorators\Soy;
+use Headfirst\CondimentDecorators\Whip;
 
 $beverage1 = new Espresso();
 echo $beverage1->getDescription() . ' $' . $beverage1->cost() . "\n";

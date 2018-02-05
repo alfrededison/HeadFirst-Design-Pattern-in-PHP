@@ -1,8 +1,11 @@
 <?php
 
-require_once 'MallardDuck.php';
-require_once 'ModelDuck.php';
-require_once 'Fly/FlyRocketPowered.php';
+define('HEADFIRST', __DIR__);
+require_once __DIR__ . '/../main.php';
+
+use Headfirst\Fly\FlyRocketPowered;
+use Headfirst\MallardDuck;
+use Headfirst\ModelDuck;
 
 $mallard = new MallardDuck();
 $mallard->performQuack();

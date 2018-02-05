@@ -5,13 +5,11 @@
  * Time: 11:17 AM
  */
 
-require_once 'Observer.php';
-require_once 'DisplayElement.php';
-require_once 'Subject.php';
+namespace Headfirst;
 
 class CurrentConditionDisplay implements Observer, DisplayElement
 {
-    /** @var \Subject */
+    /** @var Subject */
     private $weatherData;
 
     /** @var float $temperature */
@@ -22,7 +20,7 @@ class CurrentConditionDisplay implements Observer, DisplayElement
 
     /**
      * CurrentConditionDisplay constructor.
-     * @param \Subject $weatherData
+     * @param Subject $weatherData
      */
     public function __construct(Subject $weatherData)
     {

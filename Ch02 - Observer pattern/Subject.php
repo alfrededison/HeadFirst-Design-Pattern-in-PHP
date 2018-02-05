@@ -5,7 +5,7 @@
  * Time: 10:30 AM
  */
 
-require_once 'Observer.php';
+namespace Headfirst;
 
 interface Subject
 {

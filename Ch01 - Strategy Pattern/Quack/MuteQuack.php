@@ -5,7 +5,7 @@
  * Time: 4:40 PM
  */
 
-require_once 'QuackBehavior.php';
+namespace Headfirst\Quack;
 
 class MuteQuack implements QuackBehavior
 {

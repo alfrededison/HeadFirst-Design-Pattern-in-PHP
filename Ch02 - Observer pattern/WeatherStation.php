@@ -5,11 +5,14 @@
  * Time: 11:25 AM
  */
 
-require_once 'WeatherData.php';
-require_once 'CurrentConditionDisplay.php';
-require_once 'StatisticsDisplay.php';
-require_once 'ForecastDisplay.php';
-require_once 'HeatIndexDisplay.php';
+define('HEADFIRST', __DIR__);
+require_once __DIR__ . '/../main.php';
+
+use Headfirst\CurrentConditionDisplay;
+use Headfirst\ForecastDisplay;
+use Headfirst\HeatIndexDisplay;
+use Headfirst\StatisticsDisplay;
+use Headfirst\WeatherData;
 
 $weatherData       = new WeatherData();
 $currentDisplay    = new CurrentConditionDisplay($weatherData);

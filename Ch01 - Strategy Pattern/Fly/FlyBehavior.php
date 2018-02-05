@@ -5,6 +5,8 @@
  * Time: 4:34 PM
  */
 
+namespace Headfirst\Fly;
+
 interface FlyBehavior
 {
     public function fly();

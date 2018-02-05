@@ -5,7 +5,7 @@
  * Time: 10:38 AM
  */
 
-require_once 'Subject.php';
+namespace Headfirst;
 
 class WeatherData implements Subject
 {
@@ -31,7 +31,7 @@ class WeatherData implements Subject
     public function notifyObservers()
     {
         array_walk($this->observers, function ($observer) {
-            /** @var \Observer $observer */
+            /** @var Observer $observer */
             $observer->update($this->temperature, $this->humidity, $this->pressure);
         });
     }

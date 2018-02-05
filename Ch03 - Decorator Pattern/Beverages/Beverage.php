@@ -5,6 +5,8 @@
  * Time: 3:06 PM
  */
 
+namespace Headfirst\Beverages;
+
 abstract class Beverage
 {
     protected $description = 'Unknown beverage';
@@ -17,5 +19,5 @@ abstract class Beverage
     /**
      * @return float
      */
-    abstract public function cost();
+    abstract public function cost(): float;
 }

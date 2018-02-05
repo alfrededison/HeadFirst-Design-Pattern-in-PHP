@@ -5,18 +5,20 @@
  * Time: 3:20 PM
  */
 
-require_once 'Beverage.php';
+namespace Headfirst\CondimentDecorators;
+
+use Headfirst\Beverages\Beverage;
 
 abstract class CondimentDecorator extends Beverage
 {
-    /** @var \Beverage $beverage */
+    /** @var Beverage $beverage */
     protected $beverage;
 
     /**
      * CondimentDecorator constructor.
-     * @param \Beverage $beverage
+     * @param Beverage $beverage
      */
-    public function __construct(\Beverage $beverage)
+    public function __construct(Beverage $beverage)
     {
         $this->beverage = $beverage;
     }

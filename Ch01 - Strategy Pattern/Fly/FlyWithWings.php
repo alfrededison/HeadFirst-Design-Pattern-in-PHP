@@ -5,7 +5,7 @@
  * Time: 4:40 PM
  */
 
-require_once 'FlyBehavior.php';
+namespace Headfirst\Fly;
 
 class FlyWithWings implements FlyBehavior
 {

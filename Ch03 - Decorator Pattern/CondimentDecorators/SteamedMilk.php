@@ -5,7 +5,7 @@
  * Time: 3:34 PM
  */
 
-require_once __DIR__.'/../CondimentDecorator.php';
+namespace Headfirst\CondimentDecorators;
 
 class SteamedMilk extends CondimentDecorator
 {
@@ -17,7 +17,7 @@ class SteamedMilk extends CondimentDecorator
     /**
      * @return float
      */
-    public function cost()
+    public function cost(): float
     {
         return .10 + $this->beverage->cost();
     }

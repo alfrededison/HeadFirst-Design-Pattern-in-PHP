@@ -5,9 +5,10 @@
  * Time: 10:54 AM
  */
 
-require_once 'Duck.php';
-require_once 'Fly/FlyNoWay.php';
-require_once 'Quack/NormalQuack.php';
+namespace Headfirst;
+
+use Headfirst\Fly\FlyNoWay;
+use Headfirst\Quack\NormalQuack;
 
 class ModelDuck extends Duck
 {

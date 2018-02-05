@@ -5,6 +5,8 @@
  * Time: 4:34 PM
  */
 
+namespace Headfirst\Quack;
+
 interface QuackBehavior
 {
     public function quack();

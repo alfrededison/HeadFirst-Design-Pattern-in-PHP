@@ -5,7 +5,7 @@
  * Time: 3:24 PM
  */
 
-require_once __DIR__.'/../Beverage.php';
+namespace Headfirst\Beverages;
 
 class Espresso extends Beverage
 {
@@ -14,7 +14,7 @@ class Espresso extends Beverage
     /**
      * {@inheritdoc}
      */
-    public function cost()
+    public function cost(): float
     {
         return 1.99;
     }

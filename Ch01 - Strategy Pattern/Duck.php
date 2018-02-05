@@ -6,8 +6,10 @@
  * Time: 4:30 PM
  */
 
-require_once 'Quack/QuackBehavior.php';
-require_once 'Fly/FlyBehavior.php';
+namespace Headfirst;
+
+use Headfirst\Fly\FlyBehavior;
+use Headfirst\Quack\QuackBehavior;
 
 abstract class Duck
 {
@@ -25,7 +27,7 @@ abstract class Duck
     }
 
     /**
-     * @param \FlyBehavior $flyBehavior
+     * @param FlyBehavior $flyBehavior
      */
     public function setFlyBehavior(FlyBehavior $flyBehavior)
     {
@@ -33,7 +35,7 @@ abstract class Duck
     }
 
     /**
-     * @param \QuackBehavior $quackBehavior
+     * @param QuackBehavior $quackBehavior
      */
     public function setQuackBehavior(QuackBehavior $quackBehavior)
     {
