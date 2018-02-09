@@ -11,8 +11,24 @@ namespace Headfirst\Receivers;
 
 class Light
 {
+    protected $name;
+
+    /**
+     * Light constructor.
+     * @param $name
+     */
+    public function __construct($name = '')
+    {
+        $this->name = $name;
+    }
+
     public function on()
     {
-        echo 'Light is On', PHP_EOL;
+        echo $this->name, ' light is On', PHP_EOL;
+    }
+
+    public function off()
+    {
+        echo $this->name, ' light is Off', PHP_EOL;
     }
 }

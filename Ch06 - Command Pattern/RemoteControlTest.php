@@ -5,8 +5,10 @@
  * Time: 3:18 PM
  */
 
+use Headfirst\Commands\GarageDoorOpenCommand;
 use Headfirst\Commands\LightOnCommand;
 use Headfirst\Invokers\SimpleRemoteControl;
+use Headfirst\Receivers\GarageDoor;
 use Headfirst\Receivers\Light;
 
 define('HEADFIRST', __DIR__);
@@ -17,4 +19,10 @@ $light = new Light();
 $lightOn = new LightOnCommand($light);
 
 $remote->setCommand($lightOn);
+$remote->buttonWasPressed();
+
+$garageDoor = new GarageDoor();
+$garageOpen = new GarageDoorOpenCommand($garageDoor);
+
+$remote->setCommand($garageOpen);
 $remote->buttonWasPressed();
