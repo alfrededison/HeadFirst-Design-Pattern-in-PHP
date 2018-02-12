@@ -15,4 +15,9 @@ class NoCommand implements Command
     {
         echo 'Nothing happened', PHP_EOL;
     }
+
+    public function undo()
+    {
+        echo 'Nothing undone', PHP_EOL;
+    }
 }

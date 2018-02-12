@@ -11,4 +11,6 @@ namespace Headfirst\Commands;
 interface Command
 {
     public function execute();
+
+    public function undo();
 }
