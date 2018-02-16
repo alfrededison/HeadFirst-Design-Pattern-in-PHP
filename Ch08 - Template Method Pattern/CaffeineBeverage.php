@@ -15,7 +15,9 @@ abstract class CaffeineBeverage
         $this->boilWater();
         $this->brew();
         $this->pourInCup();
-        $this->addCondiments();
+        if ($this->customerWantsCondiments()) {
+            $this->addCondiments();
+        }
     }
 
     abstract protected function brew();
@@ -30,5 +32,10 @@ abstract class CaffeineBeverage
     protected function pourInCup()
     {
         echo 'Pouring in cup', PHP_EOL;
+    }
+
+    protected function customerWantsCondiments(): bool
+    {
+        return true;
     }
 }

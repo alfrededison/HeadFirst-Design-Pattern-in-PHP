@@ -20,4 +20,20 @@ class Coffee extends CaffeineBeverage
     {
         echo 'Adding sugar and milk', PHP_EOL;
     }
+
+    protected function customerWantsCondiments(): bool
+    {
+        $answer = $this->getUserInput();
+
+        if (substr($answer, 0, 1) == 'y') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function getUserInput(): string
+    {
+        return readline('Would you like milk and sugar with your coffee (y/n)?') ? : 'no';
+    }
 }
