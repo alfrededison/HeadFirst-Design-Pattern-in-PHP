@@ -8,7 +8,7 @@
 namespace Headfirst;
 
 
-class MenuItem
+class MenuItem extends MenuComponent
 {
     /** @var string $name */
     protected $name;
@@ -67,5 +67,15 @@ class MenuItem
     public function getPrice(): float
     {
         return $this->price;
+    }
+
+    public function print()
+    {
+        echo " " . $this->getName();
+        if ($this->isVegetarian()) {
+            echo "(v)";
+        }
+        echo ", " . $this->getPrice() . "\n";
+        echo "    -- " . $this->getDescription() . "\n";
     }
 }

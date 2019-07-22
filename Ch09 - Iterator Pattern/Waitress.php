@@ -10,35 +10,20 @@ namespace Headfirst;
 
 class Waitress
 {
-    /** @var array */
-    protected $menus;
+    /** @var MenuComponent */
+    protected $allMenus;
 
     /**
      * Waitress constructor.
-     * @param array $menus
+     * @param MenuComponent $menus
      */
-    public function __construct(array $menus)
+    public function __construct(MenuComponent $menus)
     {
-        $this->menus = $menus;
+        $this->allMenus = $menus;
     }
 
     public function printMenu()
     {
-        $menuIterator = new StandardIterator($this->menus);
-
-        while ($menuIterator->hasNext()) {
-            /** @var Menu $menu */
-            $menu = $menuIterator->next();
-            $this->printMenuIterator($menu->createIterator());
-        }
-    }
-
-    private function printMenuIterator(Iterator $iterator)
-    {
-        while ($iterator->hasNext()) {
-            /** @var MenuItem $menuItem */
-            $menuItem = $iterator->next();
-            echo $menuItem->getName(), ', ', $menuItem->getPrice(), ' -- ', $menuItem->getDescription(), PHP_EOL;
-        }
+        $this->allMenus->print();
     }
 }
