@@ -10,34 +10,27 @@ namespace Headfirst;
 
 class Waitress
 {
-    /** @var PancakeHouseMenu $pancakeHouseMenu */
-    protected $pancakeHouseMenu;
-
-    /** @var DinnerMenu $dinnerMenu */
-    protected $dinnerMenu;
+    /** @var array */
+    protected $menus;
 
     /**
      * Waitress constructor.
-     * @param PancakeHouseMenu $pancakeHouseMenu
-     * @param DinnerMenu       $dinnerMenu
+     * @param array $menus
      */
-    public function __construct(
-        PancakeHouseMenu $pancakeHouseMenu,
-        DinnerMenu $dinnerMenu
-    ) {
-        $this->pancakeHouseMenu = $pancakeHouseMenu;
-        $this->dinnerMenu       = $dinnerMenu;
+    public function __construct(array $menus)
+    {
+        $this->menus = $menus;
     }
 
     public function printMenu()
     {
-        $pancakeIterator = $this->pancakeHouseMenu->createIterator();
-        $dinnerIterator  = $this->dinnerMenu->createIterator();
+        $menuIterator = new StandardIterator($this->menus);
 
-        echo 'Menu', PHP_EOL, '----', PHP_EOL, 'BREAKFAST', PHP_EOL;
-        $this->printMenuIterator($pancakeIterator);
-        echo PHP_EOL, 'LUNCH', PHP_EOL;
-        $this->printMenuIterator($dinnerIterator);
+        while ($menuIterator->hasNext()) {
+            /** @var Menu $menu */
+            $menu = $menuIterator->next();
+            $this->printMenuIterator($menu->createIterator());
+        }
     }
 
     private function printMenuIterator(Iterator $iterator)

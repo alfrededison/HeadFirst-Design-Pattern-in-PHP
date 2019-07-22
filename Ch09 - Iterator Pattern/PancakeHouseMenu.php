@@ -8,7 +8,7 @@
 namespace Headfirst;
 
 
-class PancakeHouseMenu
+class PancakeHouseMenu implements Menu
 {
     /** @var array $menuItems */
     protected $menuItems = [];

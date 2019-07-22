@@ -14,5 +14,5 @@ require_once __DIR__ . '/../main.php';
 
 $pancakeHouseMenu = new PancakeHouseMenu();
 $dinnerMenu       = new DinnerMenu();
-$waitress         = new Waitress($pancakeHouseMenu, $dinnerMenu);
+$waitress         = new Waitress([$pancakeHouseMenu, $dinnerMenu]);
 $waitress->printMenu();

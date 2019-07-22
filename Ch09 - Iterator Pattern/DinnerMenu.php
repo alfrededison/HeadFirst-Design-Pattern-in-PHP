@@ -8,7 +8,7 @@
 namespace Headfirst;
 
 
-class DinnerMenu
+class DinnerMenu implements Menu
 {
     const MAX_ITEMS = 6;
 
