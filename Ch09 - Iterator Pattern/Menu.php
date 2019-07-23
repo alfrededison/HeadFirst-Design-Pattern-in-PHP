@@ -65,5 +65,8 @@ class Menu extends MenuComponent
         }
     }
 
-
+    public function createIterator(): Iterator
+    {
+        return new CompositeIterator(new StandardIterator($this->menuComponents));
+    }
 }

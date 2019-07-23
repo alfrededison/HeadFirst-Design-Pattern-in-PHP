@@ -78,4 +78,9 @@ class MenuItem extends MenuComponent
         echo ", " . $this->getPrice() . "\n";
         echo "    -- " . $this->getDescription() . "\n";
     }
+
+    public function createIterator(): Iterator
+    {
+        return new NullIterator();
+    }
 }

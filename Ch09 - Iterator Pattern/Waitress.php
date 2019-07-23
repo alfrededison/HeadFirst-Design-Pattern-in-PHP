@@ -26,4 +26,19 @@ class Waitress
     {
         $this->allMenus->print();
     }
+
+    public function printVegetarianMenu()
+    {
+        $iterator = $this->allMenus->createIterator();
+        echo "\nVEGETARIAN MENU\n-----\n";
+        while ($iterator->hasNext()) {
+            /** @var MenuComponent $menuComponent */
+            $menuComponent = $iterator->next();
+            try {
+                if ($menuComponent->isVegetarian()) {
+                    $menuComponent->print();
+                }
+            } catch (UnsupportedOperationException $exception) {}
+        }
+    }
 }
