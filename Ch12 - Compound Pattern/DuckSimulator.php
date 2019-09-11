@@ -1,5 +1,6 @@
 <?php
 
+use Headfirst\CountingDuckFactory;
 use Headfirst\DuckCall;
 use Headfirst\Goose;
 use Headfirst\GooseAdapter;
@@ -16,13 +17,15 @@ function simulate(Quackable $duck) {
     $duck->quack();
 }
 
-$mallardDuck = new QuackCounter(new NewMallardDuck());
-$redheadDuck = new QuackCounter(new RedheadDuck());
-$duckCall = new QuackCounter(new DuckCall());
-$rubberDuck = new QuackCounter(new RubberDuck());
+$duckFactory = new CountingDuckFactory();
+
+$mallardDuck = $duckFactory->createNewMallardDuck();
+$redheadDuck = $duckFactory->createRedheadDuck();
+$duckCall = $duckFactory->createDuckCall();
+$rubberDuck = $duckFactory->createRubberDuck();
 $gooseDuck = new GooseAdapter(new Goose());
 
-echo "\nDuck Simulator: With Decorator\n";
+echo "\nDuck Simulator: With Abstract Factory\n";
 
 simulate($mallardDuck);
 simulate($redheadDuck);
