@@ -2,11 +2,17 @@
 
 namespace Headfirst;
 
-class RedheadDuck implements Quackable
+class RedheadDuck extends AbstractQuackable
 {
 
     public function quack()
     {
         echo "Quack\n";
+        $this->notifyObservers();
+    }
+
+    function __toString()
+    {
+        return "Redhead Duck";
     }
 }

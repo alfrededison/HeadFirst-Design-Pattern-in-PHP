@@ -2,7 +2,7 @@
 
 namespace Headfirst;
 
-class QuackCounter implements Quackable
+class QuackCounter extends AbstractQuackable
 {
     /** @var Quackable */
     protected $duck;
@@ -16,6 +16,7 @@ class QuackCounter implements Quackable
      */
     public function __construct(Quackable $duck)
     {
+        parent::__construct();
         $this->duck = $duck;
     }
 
@@ -28,5 +29,15 @@ class QuackCounter implements Quackable
     public static function getQuacks()
     {
         return static::$numberOfQuack;
+    }
+
+    function registerObserver(QuackObserver $observer)
+    {
+        $this->duck->registerObserver($observer);
+    }
+
+    function __toString()
+    {
+        return $this->duck->__toString();
     }
 }

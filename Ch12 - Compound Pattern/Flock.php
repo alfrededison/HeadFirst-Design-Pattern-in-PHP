@@ -2,7 +2,7 @@
 
 namespace Headfirst;
 
-class Flock implements Quackable
+class Flock extends AbstractQuackable
 {
     /** @var array  */
     protected $quackers = [];
@@ -18,5 +18,18 @@ class Flock implements Quackable
             /** @var Quackable $quacker */
             $quacker->quack();
         }
+    }
+
+    function registerObserver(QuackObserver $observer)
+    {
+        foreach ($this->quackers as $quacker) {
+            /** @var Quackable $quacker */
+            $quacker->registerObserver($observer);
+        }
+    }
+
+    function __toString()
+    {
+        return "Flock of ducks";
     }
 }

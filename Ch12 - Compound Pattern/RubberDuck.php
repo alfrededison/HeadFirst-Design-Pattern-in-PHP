@@ -2,11 +2,17 @@
 
 namespace Headfirst;
 
-class RubberDuck implements Quackable
+class RubberDuck extends AbstractQuackable
 {
 
     public function quack()
     {
         echo "Squeak\n";
+        $this->notifyObservers();
+    }
+
+    function __toString()
+    {
+        return "Rubber Duck";
     }
 }

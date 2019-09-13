@@ -7,7 +7,7 @@
 
 namespace Headfirst;
 
-interface Quackable
+interface Quackable extends QuackObservable
 {
     public function quack();
 }
